@@ -4,7 +4,9 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+
+// Use environment variable for port (Fly.io expects the app to listen on port 8080 by default)
+const PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -49,7 +51,8 @@ app.post('/api/words', (req, res) => {
     dictionary.push(newWord);
     saveDictionary(dictionary);
     res.json(newWord);
-  });
+});
+
 // API to update an existing word
 app.put('/api/words/:name', (req, res) => {
     const { name } = req.params;
@@ -66,7 +69,7 @@ app.put('/api/words/:name', (req, res) => {
     } else {
       res.status(404).json({ error: 'Word not found' });
     }
-  });
+});
 
 // API to delete a word
 app.delete('/api/words/:name', (req, res) => {
@@ -77,7 +80,7 @@ app.delete('/api/words/:name', (req, res) => {
   res.json({ success: true });
 });
 
-// Start server
-app.listen(PORT, () => {
+// Start server (Listen on 0.0.0.0 to work with Fly.io)
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

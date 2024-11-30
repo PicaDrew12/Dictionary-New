@@ -16,5 +16,8 @@
     "express": "^4.21.1",
     "fs": "^0.0.1-security",
     "know-your-limits": "file:"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.9"
   }
 }

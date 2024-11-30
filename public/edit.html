@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Word</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Word</h1>
+    <form id="edit-form">
+        <input type="text" id="name" placeholder="Name" readonly />
+        <select id="type">
+          <option value="">Select Type</option>
+          <option value="noun">Noun</option>
+          <option value="verb">Verb</option>
+          <option value="adjective">Adjective</option>
+          <option value="adverb">Adverb</option>
+          <option value="pronoun">Pronoun</option>
+          <option value="preposition">Preposition</option>
+          <option value="conjunction">Conjunction</option>
+          <option value="interjection">Interjection</option>
+        </select>
+        <input type="text" id="definition" placeholder="Definition" />
+        <input type="text" id="origin" placeholder="Origin" />
+        <input type="text" id="root" placeholder="Root (use '/o' if none)" />
+        <button type="submit">Save Changes</button>
+      </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

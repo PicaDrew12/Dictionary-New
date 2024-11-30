@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conlang Dictionary Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="left-container">
+        <!-- Word Creation Form -->
+        <form id="word-form">
+          <input type="text" id="name" placeholder="Word Name" required />
+          <select id="type">
+            <option value="">Select Type</option>
+            <option value="noun">Noun</option>
+            <option value="verb">Verb</option>
+            <option value="adjective">Adjective</option>
+            <option value="adverb">Adverb</option>
+            <option value="pronoun">Pronoun</option>
+            <option value="preposition">Preposition</option>
+            <option value="conjunction">Conjunction</option>
+            <option value="interjection">Interjection</option>
+          </select>
+          <input type="text" id="definition" placeholder="Definition" />
+          <input type="text" id="origin" placeholder="Origin" />
+          <input type="text" id="root" placeholder="Root (use '/o' if none)" />
+          <button type="submit">Add Word</button>
+        </form>
+      
+        <!-- Search and Sort -->
+        <input type="text" id="search-bar" placeholder="Search for words" />
+        <div id="sort-options">
+          <button onclick="sortWords('name')">Sort by Name</button>
+          <button onclick="sortWords('type')">Sort by Type</button>
+        </div>
+      </div>
+      
+      <!-- Right Container: Word List -->
+      <div id="word-list-container">
+        <div id="word-list"></div>
+      </div>
+      
+  <script src="app.js"></script>
+</body>
+</html>

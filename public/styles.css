@@ -1,0 +1,245 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0b443f; /* Dark green background */
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #f1f1f1;
+}
+
+/* Left Side Layout (Form and Search) */
+#left-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#word-form input,
+#word-form select,
+#word-form button {
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#word-form button {
+  background-color: #f1f1f1;
+  color: #0b443f;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#word-form button:hover {
+  background-color: #0b443f;
+  color: #f1f1f1;
+}
+
+/* Search and Sort Section */
+#search-bar {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#sort-options {
+  display: flex;
+  gap: 10px;
+}
+
+#sort-options button {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  color: #0b443f;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#sort-options button:hover {
+  background-color: #0b443f;
+  color: #f1f1f1;
+}
+
+/* Right Side Layout (Word List) */
+#word-list-container {
+  width: 65%;
+  height: 100vh;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.word-item {
+  background-color: #1f3a33; /* Dark background for the card */
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.word-item:hover {
+  transform: translateY(-5px);
+}
+
+.word-item strong {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.word-item em {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.word-item button {
+  padding: 8px;
+  margin-right: 10px;
+  background-color: #f1f1f1;
+  color: #0b443f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.word-item button:hover {
+  background-color: #0b443f;
+  color: #f1f1f1;
+}
+
+/* Word Type Color Cards */
+.noun {
+  background-color: #4d8a4d; /* Muted Green */
+}
+
+.verb {
+  background-color: #e25b5b; /* Muted Red */
+}
+
+.adjective {
+  background-color: #e2a0b2; /* Muted Pink */
+}
+
+.adverb {
+  background-color: #5c8da4; /* Muted Blue */
+}
+
+.pronoun {
+  background-color: #d8bc63; /* Muted Yellow */
+}
+
+.preposition {
+  background-color: #e2b97d; /* Muted Orange */
+}
+
+.conjunction {
+  background-color: #9b6c9b; /* Muted Purple */
+}
+
+.interjection {
+  background-color: #65c5d1; /* Muted Cyan */
+}
+
+/* Smooth Scroll for Word List */
+#word-list-container {
+  overflow-y: scroll;
+  padding-right: 20px;
+  scrollbar-width: thin;
+}
+
+#word-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#word-list-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+#word-list-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Left Container (Form and Search) */
+  #left-container {
+    width: 100%;
+    gap: 10px;
+  }
+
+  #word-form input,
+  #word-form select,
+  #word-form button {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 12px;
+  }
+
+  #search-bar {
+    width: 100%;
+  }
+
+  #sort-options {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #sort-options button {
+    width: 48%;
+  }
+
+  /* Right Container (Word List) */
+  #word-list-container {
+    width: 100%;
+    height: 50vh; /* Reduce height on mobile */
+    overflow-y: auto;
+    margin-top: 20px;
+  }
+
+  .word-item {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .word-item strong {
+    font-size: 1.3rem;
+  }
+
+  .word-item em {
+    font-size: 1rem;
+  }
+
+  .word-item button {
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+}
